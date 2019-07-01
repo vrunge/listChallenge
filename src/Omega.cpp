@@ -12,6 +12,8 @@
 #include "Point_std.h"
 
 #include<iostream>
+
+#include <stdio.h>
 #include <stdlib.h>
 
 Omega::Omega(){}
@@ -45,8 +47,8 @@ void Omega::list_std(unsigned int nbLoops, unsigned int batch, double prob)
     while (it != myList.end())
     {
       count = count + 1;
-      if(rand()/(1.0*RAND_MAX) < prob){myList.erase(it);}
-      it++;
+      if(rand()/(1.0*RAND_MAX) < prob){it = myList.erase(it);
+      }else{it++;}
     }
     nb.push_back(count);
   }
