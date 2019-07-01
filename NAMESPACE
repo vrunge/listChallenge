@@ -1,0 +1,5 @@
+export(listChallenge)
+importFrom(Rcpp, evalCpp)
+importFrom("stats", "rnorm")
+useDynLib(listChallenge)
+

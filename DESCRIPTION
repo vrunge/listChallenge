@@ -1,0 +1,13 @@
+Package: listChallenge
+Type: Package
+Title: Challenge different singly linked lists with simple operations
+Version: 0.1.0
+Author: Vincent Runge
+Maintainer: T<vincent.runge@univ-evry.fr>
+Description: Challenge different singly linked lists for two simple operations: add element - delete element. Method std list and mylist so far.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 1.0.0)
+LinkingTo: Rcpp
+RoxygenNote: 6.1.1
