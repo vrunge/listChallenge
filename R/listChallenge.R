@@ -4,12 +4,11 @@
 #' @param length number of element to add into the list
 #' @param batch number of elements to add at each loop
 #' @param prob probability of deleting an element. The list is scanned after each batch loop
-#' @param method the method to use: std, mylist,...
+#' @param method the method to use: std, vr1, vr2, al1, al2,...
 #' @return a list with (i) the number of elements in the list after each loop (nb) and (ii) the overall system time in seconds (time)
 
 listChallenge <- function(length, batch, prob, method = "std")
 {
-
   ###############STOPS###############
   if(length%%1!=0 || length <= 0){stop('length is not a positive integer')}
 
@@ -18,8 +17,8 @@ listChallenge <- function(length, batch, prob, method = "std")
 
   if(prob >= 1 || prob < 0){stop('prob is not between 0 and 1 (0 <= prob < 1)')}
 
-  if(method != "std" && method != "mylist" && method != "mylist2" && method != "doublylinkedlist" && method != "doublylinkedlist2")
-    {stop('Argument "method" not appropriate. Choose among "std", "mylist" or "mylist2')}
+  if(method != "std" && method != "vr1" && method != "vr2" && method != "al1" && method != "al2")
+    {stop('Argument "method" not appropriate. Choose among "std", "vr1", "vr2", "al1" or "al2')}
 
   ###get the number of loops
   nbLoops <- length%/%batch

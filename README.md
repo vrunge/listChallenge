@@ -10,9 +10,9 @@
 
 **Contributors :**
 
--- Vincent Runge (Evry University). method : std, mylist, mylist2
+-- Vincent Runge (Evry University). method : std, vr1, vr2
 
--- ...
+-- Arnaud Liehrmann (M1 student Evry University). method : al1, al2
 
 -- ...
 
@@ -53,7 +53,7 @@ The method to use is defined in the `method` parameter of the main function `lis
 
 1) add a new exception in the error message in **listChallenge.R**
 
-`if(method != "std" && method != "mylist" && method != "mylist2"){stop('Argument "method" not appropriate. Choose among "std", "mylist" or "mylist2')}`
+`if(method != "std" && method != "vr1" && method != "vr2" && method != "al1" && method != "al2"){stop('Argument "method" not appropriate. Choose among "std", "vr1", "vr2", "al1" or "al2')}`
 
 2) add a new line in **listChallenge.cpp** to call your function (here `list_mynewlist`)
 
@@ -80,8 +80,8 @@ And challenge the 3 available functions :
 
 ```r
 l1 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "std")
-l2 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "mylist")
-l3 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "mylist2")
+l2 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr1")
+l3 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr2")
 l1$time
 ```
 
