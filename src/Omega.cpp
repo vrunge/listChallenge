@@ -134,7 +134,6 @@ void Omega::list_mylist2(unsigned int nbLoops, unsigned int batch, double prob)
 
 void Omega::list_doublylinked(unsigned int nbLoops, unsigned int batch, double prob)
 {
-  unsigned int n;
   unsigned int count = 0;
   DoublyLinkedListPoint* myList = new DoublyLinkedListPoint();
 
