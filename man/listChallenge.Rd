@@ -13,7 +13,7 @@ listChallenge(length, batch, prob, method = "std")
 
 \item{prob}{probability of deleting an element. The list is scanned after each batch loop}
 
-\item{method}{the method to use: std, mylist,...}
+\item{method}{the method to use: std, vr1, vr2, al1, al2,...}
 }
 \value{
 a list with (i) the number of elements in the list after each loop (nb) and (ii) the overall system time in seconds (time)
