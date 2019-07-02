@@ -181,7 +181,7 @@ void Omega::list_doublylinked2(unsigned int nbLoops, unsigned int batch, double 
     ///DELETE a proportion prob of elements
     myList -> initializeCurrentPosition();
     n = myList -> getLength();
-    for (int z = 0; z<n; z++)
+    for (unsigned int z = 0; z<n; z++)
     {
       count = count + 1;
       if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNextPoint();}
