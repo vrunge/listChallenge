@@ -7,9 +7,12 @@
 
 #include "ListPoint.h"
 #include "ListPoint2.h"
+#include "DoublyLinkedListPoint.h"
+#include "DoublyLinkedListPoint2.h"
 
 #include "Point.h"
 #include "Point_std.h"
+#include "PointDoubly.h"
 
 #include<iostream>
 
@@ -42,7 +45,7 @@ void Omega::list_std(unsigned int nbLoops, unsigned int batch, double prob)
       myList.push_back(new Point_std(rand(),rand()));
     }
 
-    ///DELETE a proportion prob of elements
+    /////DELETE a proportion prob of elements
     it = myList.begin();
     while (it != myList.end())
     {
@@ -73,7 +76,7 @@ void Omega::list_mylist(unsigned int nbLoops, unsigned int batch, double prob)
       myList -> addPoint(new Point(rand(),rand()));
     }
 
-    ///DELETE a proportion prob of elements
+    /////DELETE a proportion prob of elements
     myList -> initializeCurrentPosition();
     mov = true;
     while(mov == true)
@@ -119,6 +122,71 @@ void Omega::list_mylist2(unsigned int nbLoops, unsigned int batch, double prob)
       else{myList -> move();}
     }
 
+    nb.push_back(count);
+  }
+
+  delete(myList);
+}
+
+
+//####### doublylinkedlist #######////####### doublylinkedlist #######////####### doublylinkedlist #######//
+//####### doublylinkedlist #######////####### doublylinkedlist #######////####### doublylinkedlist #######//
+
+void Omega::list_doublylinked(unsigned int nbLoops, unsigned int batch, double prob)
+{
+  unsigned int n;
+  unsigned int count = 0;
+  DoublyLinkedListPoint* myList = new DoublyLinkedListPoint();
+
+  for(unsigned int i = 0; i < nbLoops; i++)
+  {
+    count = 0;
+    ///ADD bach elements
+    for(unsigned int j = 0; j < batch; j++)
+    {
+      myList -> addPoint(new PointDoubly(rand(),rand()));
+    }
+    ///DELETE a proportion prob of elements
+    myList -> initializeCurrentPosition();
+    while (myList->nextPointIsNotSentinel())
+    {
+      count = count + 1;
+      if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNextPoint();}
+      else{myList -> move();}
+    }
+    nb.push_back(count);
+  }
+
+  delete(myList);
+}
+
+
+//####### doublylinkedlist2 #######////####### doublylinkedlist2 #######////####### doublylinkedlist2 #######//
+//####### doublylinkedlist2 #######////####### doublylinkedlist2 #######////####### doublylinkedlist2 #######//
+
+void Omega::list_doublylinked2(unsigned int nbLoops, unsigned int batch, double prob)
+{
+  unsigned int n;
+  unsigned int count = 0;
+  DoublyLinkedListPoint2* myList = new DoublyLinkedListPoint2();
+
+  for(unsigned int i = 0; i < nbLoops; i++)
+  {
+    count = 0;
+    ///ADD bach elements
+    for(unsigned int j = 0; j < batch; j++)
+    {
+      myList -> addPoint(new PointDoubly(rand(),rand()));
+    }
+    ///DELETE a proportion prob of elements
+    myList -> initializeCurrentPosition();
+    n = myList -> getLength();
+    for (int z = 0; z<n; z++)
+    {
+      count = count + 1;
+      if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNextPoint();}
+      else{myList -> move();}
+    }
     nb.push_back(count);
   }
 

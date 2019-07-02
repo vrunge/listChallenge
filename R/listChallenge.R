@@ -18,7 +18,7 @@ listChallenge <- function(length, batch, prob, method = "std")
 
   if(prob >= 1 || prob < 0){stop('prob is not between 0 and 1 (0 <= prob < 1)')}
 
-  if(method != "std" && method != "mylist" && method != "mylist2")
+  if(method != "std" && method != "mylist" && method != "mylist2" && method != "doublylinkedlist" && method != "doublylinkedlist2")
     {stop('Argument "method" not appropriate. Choose among "std", "mylist" or "mylist2')}
 
   ###get the number of loops

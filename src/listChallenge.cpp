@@ -20,6 +20,8 @@ List listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, st
   if(method == "std"){omega.list_std(nbLoops, batch, prob);}
   if(method == "mylist"){omega.list_mylist(nbLoops, batch, prob);}
   if(method == "mylist2"){omega.list_mylist2(nbLoops, batch, prob);}
+  if(method == "doublylinkedlist"){omega.list_doublylinked(nbLoops, batch, prob);}
+  if(method == "doublylinkedlist2"){omega.list_doublylinked(nbLoops, batch, prob);}
 
 
   List res = List::create(_["nbElements"] = omega.GetNb());
