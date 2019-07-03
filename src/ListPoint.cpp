@@ -17,6 +17,19 @@ ListPoint::ListPoint()
 }
 
 
+//####### destructor #######////####### destructor #######////####### destructor #######//
+//####### destructor #######////####### destructor #######////####### destructor #######//
+
+ListPoint::~ListPoint()
+{
+  while(firstPoint != NULL)
+  {
+    Point* pointToDelete = firstPoint;
+    firstPoint = firstPoint -> nxt;
+    delete(pointToDelete);
+  }
+}
+
 //####### accessor #######////####### accessor #######////####### accessor #######//
 //####### accessor #######////####### accessor #######////####### accessor #######//
 

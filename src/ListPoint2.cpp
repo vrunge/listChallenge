@@ -18,6 +18,20 @@ ListPoint2::ListPoint2()
 }
 
 
+
+//####### destructor #######////####### destructor #######////####### destructor #######//
+//####### destructor #######////####### destructor #######////####### destructor #######//
+
+ListPoint2::~ListPoint2()
+{
+  for(unsigned int i = 0; i < length; i++)
+  {
+    Point* pointToDelete = firstPoint;
+    firstPoint = firstPoint -> nxt;
+    delete(pointToDelete);
+  }
+}
+
 //####### accessor #######////####### accessor #######////####### accessor #######//
 //####### accessor #######////####### accessor #######////####### accessor #######//
 

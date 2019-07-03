@@ -11,6 +11,7 @@ class ListPoint ///DANGER: THERE IS "NO" EMPTY LIST. ALWAYS ADD SOME ELEMENTS
 {
 public:
   ListPoint(); //create an empty list
+  ~ListPoint();
   unsigned int getState();
   unsigned int getTime();
 
