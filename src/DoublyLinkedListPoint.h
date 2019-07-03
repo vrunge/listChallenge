@@ -11,6 +11,7 @@ class DoublyLinkedListPoint ///DANGER: THERE IS "NO" EMPTY LIST. ALWAYS ADD SOME
 {
 public:
   DoublyLinkedListPoint();
+  ~DoublyLinkedListPoint();
   unsigned int getState();
   unsigned int getTime();
 
