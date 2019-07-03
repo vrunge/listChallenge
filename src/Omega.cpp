@@ -32,15 +32,15 @@ unsigned int Omega::GetLength() const
 
 void Omega::list_std(unsigned int nbLoops, unsigned int batch, double prob)
 {
-  std::list<Point_std*> myList;
-  std::list<Point_std*>::iterator it;
+  std::list<Point_std> myList;
+  std::list<Point_std>::iterator it;
 
   for(unsigned int i = 0; i < nbLoops; i++)
   {
     ///ADD bach elements
     for(unsigned int j = 0; j < batch; j++)
     {
-      myList.push_back(new Point_std(rand(),rand()));
+      myList.push_back(Point_std(rand(),rand()));
     }
 
     /////DELETE a proportion prob of elements
@@ -54,7 +54,7 @@ void Omega::list_std(unsigned int nbLoops, unsigned int batch, double prob)
 
   unsigned int count = 0;
   it = myList.begin();
-  while(it != myList.end()){count = count + 1;}
+  while(it != myList.end()){count = count + 1; it++;}
   length = count;
 
 }
