@@ -16,12 +16,11 @@ output:
 
 **Contributors :**
 
--- Vincent Runge (Evry University). method : std, mylist, mylist2
+* Vincent Runge (Evry University). method : std, vr1, vr2
 
--- ...
+* Arnaud Liehrmann (M1 student Evry University). method : al1, al2
 
--- ...
-
+* ...
 
 
 > [The challenge](#challenge)
@@ -29,6 +28,10 @@ output:
 > [How to add a new list structure?](#list)
 
 > [The listChallenge function](#function)
+
+> [Description of the methods](#methods)
+
+> [The competition](#competition)
 
 
 <a id="challenge"></a>
@@ -81,20 +84,25 @@ We install the package from Github:
 library(listChallenge)
 ```
 
-And challenge the 3 available functions :
+And challenge the 5 available functions :
 ```{r}
-l1 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "std")
-l2 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "mylist")
-l3 <- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "mylist2")
-l1$time
-l2$time
-l3$time
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "std")
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr1")
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr2")
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al1")
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al2")
 ```
 
-We observe the pruning efficiency in the nb response parameter
-```{r}
-listChallenge(length = 10^4, batch = 10^2, prob = 0.1, method = "std")
-```
+Notice that the number of elements after the last loop is in the `finalLength` parameter.
+
+<a id="methods"></a>
+
+## Description of the methods
+
+
+<a id="competition"></a>
+
+## The competition
 
 
 [Back to Top](#top)

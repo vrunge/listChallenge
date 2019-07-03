@@ -202,9 +202,11 @@ $(document).ready(function () {
 <div id="july-1st-2019" class="section level3">
 <h3>July 1st, 2019</h3>
 <p><strong>Contributors :</strong></p>
-<p>– Vincent Runge (Evry University). method : std, mylist, mylist2</p>
-<p>– …</p>
-<p>– …</p>
+<ul>
+<li><p>Vincent Runge (Evry University). method : std, vr1, vr2</p></li>
+<li><p>Arnaud Liehrmann (M1 student Evry University). method : al1, al2</p></li>
+<li><p>…</p></li>
+</ul>
 <blockquote>
 <p><a href="#challenge">The challenge</a></p>
 </blockquote>
@@ -213,6 +215,12 @@ $(document).ready(function () {
 </blockquote>
 <blockquote>
 <p><a href="#function">The listChallenge function</a></p>
+</blockquote>
+<blockquote>
+<p><a href="#methods">Description of the methods</a></p>
+</blockquote>
+<blockquote>
+<p><a href="#competition">The competition</a></p>
 </blockquote>
 <p><a id="challenge"></a></p>
 </div>
@@ -249,30 +257,46 @@ $(document).ready(function () {
 <p>We install the package from Github:</p>
 <pre class="r"><code>#devtools::install_github(&quot;vrunge/listChallenge&quot;)
 library(listChallenge)</code></pre>
-<p>And challenge the 3 available functions :</p>
-<pre class="r"><code>l1 &lt;- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;std&quot;)
-l2 &lt;- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;mylist&quot;)
-l3 &lt;- listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;mylist2&quot;)
-l1$time</code></pre>
-<pre><code>## [1] 4.291992</code></pre>
-<pre class="r"><code>l2$time</code></pre>
-<pre><code>## [1] 6.976566</code></pre>
-<pre class="r"><code>l3$time</code></pre>
-<pre><code>## [1] 2.184854</code></pre>
-<p>We observe the pruning efficiency in the nb response parameter</p>
-<pre class="r"><code>listChallenge(length = 10^4, batch = 10^2, prob = 0.1, method = &quot;std&quot;)</code></pre>
-<pre><code>## $nb
-##   [1]  100  188  266  338  402  465  516  560  600  637  667  699  710  733
-##  [15]  757  769  783  795  811  846  845  857  875  883  895  916  908  903
-##  [29]  915  918  931  919  921  927  913  924  931  946  953  963  959  960
-##  [43]  973  993  984  974  969  961  982  983  986  990  995  998  992 1002
-##  [57] 1009 1008 1013  997  986  992  988  974  963  961  962  964  950  957
-##  [71]  971  973  955  954  965  978  951  964  968  979  974  988  991  989
-##  [85]  989 1006  997  991  996 1004 1011 1017 1005 1006 1004  994  995  981
-##  [99]  989  982
+<p>And challenge the 5 available functions :</p>
+<pre class="r"><code>listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;std&quot;)</code></pre>
+<pre><code>## $finalLength
+## [1] 90213
 ## 
 ## $time
-## [1] 0.002037287</code></pre>
+## [1] 2.06241</code></pre>
+<pre class="r"><code>listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;vr1&quot;)</code></pre>
+<pre><code>## $finalLength
+## [1] 90067
+## 
+## $time
+## [1] 2.112072</code></pre>
+<pre class="r"><code>listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;vr2&quot;)</code></pre>
+<pre><code>## $finalLength
+## [1] 89832
+## 
+## $time
+## [1] 2.239915</code></pre>
+<pre class="r"><code>listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;al1&quot;)</code></pre>
+<pre><code>## $finalLength
+## [1] 100244
+## 
+## $time
+## [1] 2.284119</code></pre>
+<pre class="r"><code>listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = &quot;al2&quot;)</code></pre>
+<pre><code>## $finalLength
+## [1] 100229
+## 
+## $time
+## [1] 2.291311</code></pre>
+<p>Notice that the number of elements after the last loop is in the <code>finalLength</code> parameter.</p>
+<p><a id="methods"></a></p>
+</div>
+<div id="description-of-the-methods" class="section level2">
+<h2>Description of the methods</h2>
+<p><a id="competition"></a></p>
+</div>
+<div id="the-competition" class="section level2">
+<h2>The competition</h2>
 <p><a href="#top">Back to Top</a></p>
 </div>
 </div>
