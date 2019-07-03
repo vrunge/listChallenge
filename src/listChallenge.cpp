@@ -12,7 +12,7 @@ using namespace std;
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-List listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, std::string method = "std")
+unsigned int listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, std::string method = "std")
 {
   Omega omega = Omega();
 
@@ -24,7 +24,7 @@ List listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, st
   if(method == "al2"){omega.list_doublylinked2(nbLoops, batch, prob);}
 
 
-  List res = List::create(_["nbElements"] = omega.GetNb());
+  //List res = List::create(_["nbElements"] = omega.GetLength());
 
-  return res;
+  return omega.GetLength();
 }

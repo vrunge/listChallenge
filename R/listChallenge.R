@@ -25,12 +25,12 @@ listChallenge <- function(length, batch, prob, method = "std")
 
   ###CALL Rcpp functions###
   start_time <- Sys.time()
-  res <- listChallenge_cpp(nbLoops, batch, prob, method)
+  nb <- listChallenge_cpp(nbLoops, batch, prob, method)
   end_time <- Sys.time()
   time <- unclass(end_time - start_time)[1]
 
   #time in seconds
-  response <- list(nb = res$nbElements, time = time)
+  response <- list(finalLength = nb, time = time)
 
   return(response)
 }

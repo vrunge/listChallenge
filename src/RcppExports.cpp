@@ -6,7 +6,7 @@
 using namespace Rcpp;
 
 // listChallenge_cpp
-List listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, std::string method);
+unsigned int listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, std::string method);
 RcppExport SEXP _listChallenge_listChallenge_cpp(SEXP nbLoopsSEXP, SEXP batchSEXP, SEXP probSEXP, SEXP methodSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

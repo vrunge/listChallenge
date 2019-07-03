@@ -24,7 +24,7 @@ ListPoint2::ListPoint2()
 
 ListPoint2::~ListPoint2()
 {
-  for(unsigned int i = 0; i < length; i++)
+  for(unsigned int i = 0; i < (length + 1); i++) //first Point is unused
   {
     Point* pointToDelete = firstPoint;
     firstPoint = firstPoint -> nxt;
