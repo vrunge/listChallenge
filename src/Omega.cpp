@@ -137,12 +137,10 @@ void Omega::list_mylist2(unsigned int nbLoops, unsigned int batch, double prob)
 
 void Omega::list_doublylinked(unsigned int nbLoops, unsigned int batch, double prob)
 {
-  unsigned int count = 0;
   DoublyLinkedListPoint* myList = new DoublyLinkedListPoint();
 
   for(unsigned int i = 0; i < nbLoops; i++)
   {
-    count = 0;
     ///ADD bach elements
     for(unsigned int j = 0; j < batch; j++)
     {
@@ -152,11 +150,16 @@ void Omega::list_doublylinked(unsigned int nbLoops, unsigned int batch, double p
     myList -> initializeCurrentPosition();
     while (myList->nextPointIsNotSentinel())
     {
-      count = count + 1;
       if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNextPoint();}
       else{myList -> move();}
     }
-  length = count;
+    unsigned int count = 0;
+    myList -> initializeCurrentPosition();
+    while (myList->nextPointIsNotSentinel()){
+      myList -> move();
+      count++;
+    }
+    length = count;
   }
 
   delete(myList);
@@ -169,12 +172,10 @@ void Omega::list_doublylinked(unsigned int nbLoops, unsigned int batch, double p
 void Omega::list_doublylinked2(unsigned int nbLoops, unsigned int batch, double prob)
 {
   unsigned int n;
-  unsigned int count = 0;
   DoublyLinkedListPoint2* myList = new DoublyLinkedListPoint2();
 
   for(unsigned int i = 0; i < nbLoops; i++)
   {
-    count = 0;
     ///ADD bach elements
     for(unsigned int j = 0; j < batch; j++)
     {
@@ -185,11 +186,10 @@ void Omega::list_doublylinked2(unsigned int nbLoops, unsigned int batch, double 
     n = myList -> getLength();
     for (unsigned int z = 0; z<n; z++)
     {
-      count = count + 1;
       if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNextPoint();}
       else{myList -> move();}
     }
-  length = count;
+  length = myList->getLength();
   }
 
   delete(myList);

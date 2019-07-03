@@ -11,9 +11,9 @@ class DoublyLinkedListPoint2 ///DANGER: THERE IS "NO" EMPTY LIST. ALWAYS ADD SOM
 {
 public:
   DoublyLinkedListPoint2();
+  ~DoublyLinkedListPoint2();
   unsigned int getState();
   unsigned int getTime();
-
   void addPoint(PointDoubly * P);
   void move();
   void deleteNextPoint();

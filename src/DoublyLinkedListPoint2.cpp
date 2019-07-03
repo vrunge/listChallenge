@@ -75,3 +75,16 @@ unsigned int DoublyLinkedListPoint2::getLength()
 {
   return length;
 }
+
+//####### Destructor #######////####### Destructor #######////####### Destructor #######//
+//####### Destructor #######////####### Destructor #######////####### Destructor #######//
+
+DoublyLinkedListPoint2::~DoublyLinkedListPoint2()
+{
+  for(int i = 0; i < length+1; i++)
+  {
+    PointDoubly* pointToDelete = sentinel;
+    sentinel = sentinel -> nxt;
+    delete(pointToDelete);
+  }
+}

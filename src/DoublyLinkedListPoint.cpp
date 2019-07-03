@@ -75,3 +75,18 @@ bool DoublyLinkedListPoint::nextPointIsNotSentinel()
 {
   return currentPosition->nxt != sentinel;
 }
+
+//####### destructor #######////####### destructor #######////####### destructor #######//
+//####### destructor #######////####### destructor #######////####### destructor #######//
+
+DoublyLinkedListPoint::~DoublyLinkedListPoint()
+{
+  sentinel->prev->nxt=NULL;
+  while(sentinel != NULL)
+  {
+    PointDoubly* pointToDelete = sentinel;
+    sentinel = sentinel -> nxt;
+    delete(pointToDelete);
+  }
+}
+
