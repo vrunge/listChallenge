@@ -138,28 +138,22 @@ void Omega::list_mylist2(unsigned int nbLoops, unsigned int batch, double prob)
 void Omega::list_doublylinked(unsigned int nbLoops, unsigned int batch, double prob)
 {
   DoublyLinkedListPoint* myList = new DoublyLinkedListPoint();
-
+  length = 0;
   for(unsigned int i = 0; i < nbLoops; i++)
   {
     ///ADD bach elements
     for(unsigned int j = 0; j < batch; j++)
     {
       myList -> addPoint(new PointDoubly(rand(),rand()));
+      length++;
     }
     ///DELETE a proportion prob of elements
     myList -> initializeCurrentPosition();
     while (myList->nextPointIsNotSentinel())
     {
-      if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNextPoint();}
+      if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNextPoint();length--;}
       else{myList -> move();}
     }
-    unsigned int count = 0;
-    myList -> initializeCurrentPosition();
-    while (myList->nextPointIsNotSentinel()){
-      myList -> move();
-      count++;
-    }
-    length = count;
   }
 
   delete(myList);
