@@ -17,6 +17,7 @@ class Omega
     void list_std(unsigned int nbLoops, unsigned int batch, double prob);
     void list_mylist(unsigned int nbLoops, unsigned int batch, double prob);
     void list_mylist2(unsigned int nbLoops, unsigned int batch, double prob);
+    void list_mylist3(unsigned int nbLoops, unsigned int batch, double prob);
     void list_doublylinked(unsigned int nbLoops, unsigned int batch, double prob);
     void list_doublylinked2(unsigned int nbLoops, unsigned int batch, double prob);
   private:

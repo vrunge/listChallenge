@@ -7,6 +7,7 @@
 
 #include "ListPoint.h"
 #include "ListPoint2.h"
+#include "ListPoint3.h"
 #include "DoublyLinkedListPoint.h"
 #include "DoublyLinkedListPoint2.h"
 
@@ -131,6 +132,38 @@ void Omega::list_mylist2(unsigned int nbLoops, unsigned int batch, double prob)
   delete(myList);
 }
 
+
+
+//####### list_mylist3 #######////####### list_mylist3 #######////####### list_mylist3 #######//
+//####### list_mylist3 #######////####### list_mylist3 #######////####### list_mylist3 #######//
+
+void Omega::list_mylist3(unsigned int nbLoops, unsigned int batch, double prob)
+{
+  unsigned int n;
+  ListPoint3* myList = new ListPoint3();
+
+  for(unsigned int i = 0; i < nbLoops; i++)
+  {
+    ///ADD bach elements
+    for(unsigned int j = 0; j < batch; j++)
+    {
+      myList -> addPoint(new Point(rand(),rand()));
+    }
+
+    ///DELETE a proportion prob of elements
+    myList -> initializeCurrentPosition();
+    n = myList -> getLength();
+    for(unsigned int i = 0; i < n;i++)
+    {
+      if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNxtPointAndMove();}
+      else{myList -> move();}
+    }
+
+    length = myList -> getLength();
+  }
+
+  delete(myList);
+}
 
 //####### doublylinkedlist #######////####### doublylinkedlist #######////####### doublylinkedlist #######//
 //####### doublylinkedlist #######////####### doublylinkedlist #######////####### doublylinkedlist #######//

@@ -20,6 +20,7 @@ unsigned int listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double 
   if(method == "std"){omega.list_std(nbLoops, batch, prob);}
   if(method == "vr1"){omega.list_mylist(nbLoops, batch, prob);}
   if(method == "vr2"){omega.list_mylist2(nbLoops, batch, prob);}
+  if(method == "vr3"){omega.list_mylist3(nbLoops, batch, prob);}
   if(method == "al1"){omega.list_doublylinked(nbLoops, batch, prob);}
   if(method == "al2"){omega.list_doublylinked2(nbLoops, batch, prob);}
 

@@ -10,7 +10,7 @@
 
 **Contributors :**
 
-* Vincent Runge (Evry University). method : std, vr1, vr2
+* Vincent Runge (Evry University). method : std, vr1, vr2, vr3
 
 * Arnaud Liehrmann (M1 student Evry University). method : al1, al2
 
@@ -87,10 +87,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "std")
 
 ```
 ## $finalLength
-## [1] 89942
+## [1] 89952
 ## 
 ## $time
-## [1] 3.125883
+## [1] 2.821676
 ```
 
 ```r
@@ -99,10 +99,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr1")
 
 ```
 ## $finalLength
-## [1] 90077
+## [1] 89829
 ## 
 ## $time
-## [1] 3.034521
+## [1] 2.780409
 ```
 
 ```r
@@ -111,10 +111,22 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr2")
 
 ```
 ## $finalLength
-## [1] 90079
+## [1] 90078
 ## 
 ## $time
-## [1] 3.187864
+## [1] 2.709038
+```
+
+```r
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr3")
+```
+
+```
+## $finalLength
+## [1] 89493
+## 
+## $time
+## [1] 2.72021
 ```
 
 ```r
@@ -123,10 +135,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al1")
 
 ```
 ## $finalLength
-## [1] 100020
+## [1] 90217
 ## 
 ## $time
-## [1] 4.349238
+## [1] 2.931131
 ```
 
 ```r
@@ -135,10 +147,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al2")
 
 ```
 ## $finalLength
-## [1] 99965
+## [1] 90025
 ## 
 ## $time
-## [1] 3.421283
+## [1] 2.860178
 ```
 
 Notice that the number of elements after the last loop is in the `finalLength` parameter.
