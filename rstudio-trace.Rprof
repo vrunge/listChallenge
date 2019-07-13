@@ -1,3 +1,0 @@
-sample.interval=20000
-"stop" "utils::summaryRprof" 
-"$" "findCenvVar" "getInlineInfo" "isBaseVar" "getFoldFun" "constantFoldCall" "constantFold" "cmp" "h" "tryInline" "cmpCall" "cmp" "h" "tryInline" "cmpCall" "cmp" "h" "tryInline" "cmpCall" "cmp" "h" "tryInline" "cmpCall" "cmp" "genCode" "h" "tryInline" "cmpCall" "cmp" "genCode" "cb$putconst" "cmpCallArgs" "cmpCallSymFun" "cmpCall" "cmp" "cmpSymbolAssign" "h" "tryInline" "cmpCall" "cmp" "h" "tryInline" "cmpCall" "cmp" "genCode" "cmpfun" "doTryCatch" "tryCatchOne" "tryCatchList" "tryCatch" "compiler:::tryCmpfun" ".rs.recordTraceback" "<Anonymous>" "stop" "utils::summaryRprof" 
