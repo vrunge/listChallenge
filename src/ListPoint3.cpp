@@ -13,8 +13,6 @@ ListPoint3::ListPoint3()
 {
   length = 0;
   firstPoint = new Point(0,0);
-  currentPosition = firstPoint;
-  lastPoint = firstPoint;
   //the first Point = an empty point : we consider point->nxt in functions
 }
 
@@ -52,8 +50,8 @@ unsigned int ListPoint3::getLength()
 
 void ListPoint3::addPoint(Point* P)
 {
-  lastPoint -> nxt = P;
-  lastPoint = P;
+  P -> nxt = firstPoint -> nxt;
+  firstPoint -> nxt = P;
   length = length + 1;
 }
 
@@ -62,22 +60,23 @@ void ListPoint3::addPoint(Point* P)
 //####### deleteNxtPoint #######////####### deleteNxtPoint #######////####### deleteNxtPoint #######//
 
 
-
 void ListPoint3::deleteNxtPointAndMove()
 {
-  Point* pointToDelete = currentPosition -> nxt;
-  if(pointToDelete == lastPoint){lastPoint = currentPosition;}
-  currentPosition -> nxt = currentPosition -> nxt -> nxt;
+  Point* pointToDelete = currentPosition;
+  currentPosition = currentPosition -> nxt;
+  currentMinus1Position -> nxt = currentPosition;
   length = length - 1;
   delete(pointToDelete);
-
 }
 
 //####### initializeCurrentPosition #######////####### initializeCurrentPosition #######////####### initializeCurrentPosition #######//
 //####### initializeCurrentPosition #######////####### initializeCurrentPosition #######////####### initializeCurrentPosition #######//
 
 void ListPoint3::initializeCurrentPosition()
-{currentPosition = firstPoint;}
+{
+  currentMinus1Position = firstPoint;
+  currentPosition = firstPoint -> nxt;
+}
 
 
 //####### move #######////####### move #######////####### move #######//
@@ -86,13 +85,8 @@ void ListPoint3::initializeCurrentPosition()
 
 void ListPoint3::move()
 {
+  currentMinus1Position = currentPosition;
   currentPosition = currentPosition -> nxt;
 }
-
-
-
-
-
-
 
 
