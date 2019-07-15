@@ -18,7 +18,7 @@ output:
 
 * Vincent Runge (Evry University). method : std, vr1, vr2, vr3
 
-* Arnaud Liehrmann (M1 student Evry University). method : al1, al2
+* Arnaud Liehrmann (M1 student Evry University). method : al1, al2, al3
 
 * ...
 
@@ -92,6 +92,7 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr2")
 listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr3")
 listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al1")
 listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al2")
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al3")
 ```
 
 Notice that the number of elements after the last loop is in the `finalLength` parameter.

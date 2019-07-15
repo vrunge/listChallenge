@@ -12,7 +12,7 @@
 
 * Vincent Runge (Evry University). method : std, vr1, vr2, vr3
 
-* Arnaud Liehrmann (M1 student Evry University). method : al1, al2
+* Arnaud Liehrmann (M1 student Evry University). method : al1, al2, al3
 
 * ...
 
@@ -79,7 +79,7 @@ We install the package from Github:
 library(listChallenge)
 ```
 
-And challenge the 5 available functions :
+And challenge the 7 available functions :
 
 ```r
 listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "std")
@@ -87,10 +87,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "std")
 
 ```
 ## $finalLength
-## [1] 89952
+## [1] 90022
 ## 
 ## $time
-## [1] 2.821676
+## [1] 3.498905
 ```
 
 ```r
@@ -99,10 +99,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr1")
 
 ```
 ## $finalLength
-## [1] 89829
+## [1] 89987
 ## 
 ## $time
-## [1] 2.780409
+## [1] 3.260789
 ```
 
 ```r
@@ -111,10 +111,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr2")
 
 ```
 ## $finalLength
-## [1] 90078
+## [1] 90362
 ## 
 ## $time
-## [1] 2.709038
+## [1] 3.535025
 ```
 
 ```r
@@ -123,10 +123,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "vr3")
 
 ```
 ## $finalLength
-## [1] 89493
+## [1] 90088
 ## 
 ## $time
-## [1] 2.72021
+## [1] 3.215803
 ```
 
 ```r
@@ -135,10 +135,10 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al1")
 
 ```
 ## $finalLength
-## [1] 90217
+## [1] 89773
 ## 
 ## $time
-## [1] 2.931131
+## [1] 3.353224
 ```
 
 ```r
@@ -147,10 +147,22 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al2")
 
 ```
 ## $finalLength
-## [1] 90025
+## [1] 89615
 ## 
 ## $time
-## [1] 2.860178
+## [1] 3.377432
+```
+
+```r
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al3")
+```
+
+```
+## $finalLength
+## [1] 90385
+## 
+## $time
+## [1] 2.4966
 ```
 
 Notice that the number of elements after the last loop is in the `finalLength` parameter.
