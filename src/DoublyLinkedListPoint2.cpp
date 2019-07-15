@@ -81,7 +81,7 @@ unsigned int DoublyLinkedListPoint2::getLength()
 
 DoublyLinkedListPoint2::~DoublyLinkedListPoint2()
 {
-  for(int i = 0; i < length+1; i++)
+  for(unsigned int i = 0; i < length+1; i++)
   {
     PointDoubly* pointToDelete = sentinel;
     sentinel = sentinel -> nxt;

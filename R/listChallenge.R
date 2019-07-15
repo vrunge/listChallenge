@@ -17,8 +17,8 @@ listChallenge <- function(length, batch, prob, method = "std")
 
   if(prob >= 1 || prob < 0){stop('prob is not between 0 and 1 (0 <= prob < 1)')}
 
-  if(method != "std" && method != "vr1" && method != "vr2" && method != "vr3" &&method != "al1" && method != "al2")
-    {stop('Argument "method" not appropriate. Choose among "std", "vr1", "vr2", "vr3", "al1" or "al2')}
+  if(method != "std" && method != "vr1" && method != "vr2" && method != "vr3" &&method != "al1" && method != "al2" && method != "al3")
+    {stop('Argument "method" not appropriate. Choose among "std", "vr1", "vr2", "vr3", "al1", "al2" or "al3"')}
 
   ###get the number of loops
   nbLoops <- length%/%batch

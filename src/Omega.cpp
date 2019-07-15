@@ -10,6 +10,7 @@
 #include "ListPoint3.h"
 #include "DoublyLinkedListPoint.h"
 #include "DoublyLinkedListPoint2.h"
+#include "SinglyLinkedList4.h";
 
 #include "Point.h"
 #include "Point_std.h"
@@ -220,4 +221,34 @@ void Omega::list_doublylinked2(unsigned int nbLoops, unsigned int batch, double 
   }
 
   delete(myList);
+}
+
+
+//####### SinglyLinkedList4 #######////####### SinglyLinkedList4 #######////####### SinglyLinkedList4 #######//
+//####### SinglyLinkedList4 #######////####### SinglyLinkedList4 #######////####### SinglyLinkedList4 #######//
+
+
+void Omega::list_SinglyLinkedList4(unsigned int nbLoops, unsigned int batch, double prob)
+{
+  unsigned int n;
+  SinglyLinkedList4 myList = SinglyLinkedList4(nbLoops*batch);
+
+  for(unsigned int i = 0; i < nbLoops; i++)
+  {
+    ///ADD bach elements
+    for(unsigned int j = 0; j < batch; j++)
+    {
+      myList.addPoint(rand(),rand());
+    }
+
+    ///DELETE a proportion prob of elements
+    myList.initializeCurrentPosition();
+    n = myList.getLength();
+    for(unsigned int i = 0; i < n;i++)
+    {
+      if(rand()/(1.0*RAND_MAX) < prob){myList.deleteNxtPointAndMove();}
+      else{myList.move();}
+    }
+  }
+  length = myList.getLength();
 }
