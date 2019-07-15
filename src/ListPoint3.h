@@ -25,7 +25,7 @@ public:
 private:
   Point* firstPoint;
   Point* currentPosition;
-  Point* lastPoint;
+  Point* currentMinus1Position;
 
   unsigned int length;
 };
