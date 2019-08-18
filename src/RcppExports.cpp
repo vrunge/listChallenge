@@ -6,8 +6,8 @@
 using namespace Rcpp;
 
 // listChallenge_cpp
-unsigned int listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, std::string method);
-RcppExport SEXP _listChallenge_listChallenge_cpp(SEXP nbLoopsSEXP, SEXP batchSEXP, SEXP probSEXP, SEXP methodSEXP) {
+unsigned int listChallenge_cpp(unsigned int nbLoops, unsigned int batch, double prob, std::string method, int default_length);
+RcppExport SEXP _listChallenge_listChallenge_cpp(SEXP nbLoopsSEXP, SEXP batchSEXP, SEXP probSEXP, SEXP methodSEXP, SEXP default_lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -15,13 +15,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< unsigned int >::type batch(batchSEXP);
     Rcpp::traits::input_parameter< double >::type prob(probSEXP);
     Rcpp::traits::input_parameter< std::string >::type method(methodSEXP);
-    rcpp_result_gen = Rcpp::wrap(listChallenge_cpp(nbLoops, batch, prob, method));
+    Rcpp::traits::input_parameter< int >::type default_length(default_lengthSEXP);
+    rcpp_result_gen = Rcpp::wrap(listChallenge_cpp(nbLoops, batch, prob, method, default_length));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_listChallenge_listChallenge_cpp", (DL_FUNC) &_listChallenge_listChallenge_cpp, 4},
+    {"_listChallenge_listChallenge_cpp", (DL_FUNC) &_listChallenge_listChallenge_cpp, 5},
     {NULL, NULL, 0}
 };
 

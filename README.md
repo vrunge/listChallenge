@@ -12,7 +12,7 @@
 
 * Vincent Runge (Evry University). method : std, vr1, vr2, vr3
 
-* Arnaud Liehrmann (M1 student Evry University). method : al1, al2, al3
+* Arnaud Liehrmann (M1 student Evry University). method : al1, al2, al3, al4
 
 * ...
 
@@ -154,7 +154,7 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al2")
 ```
 
 ```r
-listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al3")
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al3", default_length= 10^7)
 ```
 
 ```
@@ -164,6 +164,16 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al3")
 ## $time
 ## [1] 2.4966
 ```
+```r
+listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al4")
+```
+```
+##$finalLength
+##[1] 90333
+##
+##$time
+##[1] 2.4756
+```
 
 Notice that the number of elements after the last loop is in the `finalLength` parameter.
 
@@ -171,10 +181,50 @@ Notice that the number of elements after the last loop is in the `finalLength` p
 
 ## Description of the methods
 
+### Singly-linked list
+
+1) *vr1*
+
+In this implementation the elements are added after the head of the list. The head is a dummy element. We loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
+
+2) *vr2*
+
+Same as *vr1*. In addition to that, we save the length of the list so that we know how many elements we have to loop on.
+
+3) *vr3*
+
+Same as *vr2*. In addition to that, we keep a pointer on the element minus one pointed by `currentPosition`.
+
+4) *al3*
+
+In this implementation default elements are instanciated by blocks (contigously in the memory) and linked to each other. The number of elements in one block is defined by the user. We keep a pointer on the last element of the list so that when an element is deleted it is actually linked at the end of the list. When the list contain more elements than can contain one block, we instanciate another block of default elements. Then the last element of the list is linked to the first element of the new block. In the same way as *al1* and *al2*, we loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
+
+5) *al4*
+
+In this implementation, the list has two states: active and inactive . We keep a pointer (`lastActivePosition`) on the last element of the active part. We also keep a pointer (`tail`) on the last element of the list, not necessarily active, so that when an element is deleted it is actually linked at the end of the list. We loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
+
+### Doubly-linked list
+
+1) *std*
+
+Implementation that uses the doubly-linked list available in the standard library. The elements are added and deleted with the respective methods `push_back` and `erase`. We loop through the list with an iterator.
+
+2) *al1*
+
+In this implementation the doubly-linked list is actually circular. A dummy element, the `sentinel`, plays the role of head and tail to prevent border effects. We loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
+
+3) *al2*
+
+Same as *al1*. In addition to that, we save the length of the list so that we know how many elements we have to loop on.
 
 <a id="competition"></a>
 
 ## The competition
 
+![ ](img/time_comp_plot.png)
+
+![ ](img/time_comp_plot2.png)
+
+![ ](img/time_comp_plot3.png)
 
 [Back to Top](#top)

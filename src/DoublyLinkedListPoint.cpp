@@ -3,7 +3,6 @@
 
 #include "DoublyLinkedListPoint.h"
 #include<iostream>
-
 #include "math.h"
 
 

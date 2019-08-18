@@ -2,8 +2,7 @@
 // Copyright (c) 2019 Vincent Runge
 
 #include "ListPoint.h"
-#include<iostream>
-
+#include <iostream>
 #include "math.h"
 
 //####### constructor #######////####### constructor #######////####### constructor #######//

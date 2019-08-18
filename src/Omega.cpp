@@ -10,7 +10,8 @@
 #include "ListPoint3.h"
 #include "DoublyLinkedListPoint.h"
 #include "DoublyLinkedListPoint2.h"
-#include "SinglyLinkedList4.h";
+#include "SinglyLinkedList4.h"
+#include "SinglyLinkedList5.h"
 
 #include "Point.h"
 #include "Point_std.h"
@@ -121,7 +122,7 @@ void Omega::list_mylist2(unsigned int nbLoops, unsigned int batch, double prob)
     ///DELETE a proportion prob of elements
     myList -> initializeCurrentPosition();
     n = myList -> getLength();
-    for(unsigned int i = 0; i < n;i++)
+    for(unsigned int z = 0; z < n;z++)
     {
       if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNxtPointAndMove();}
       else{myList -> move();}
@@ -154,7 +155,7 @@ void Omega::list_mylist3(unsigned int nbLoops, unsigned int batch, double prob)
     ///DELETE a proportion prob of elements
     myList -> initializeCurrentPosition();
     n = myList -> getLength();
-    for(unsigned int i = 0; i < n;i++)
+    for(unsigned int z = 0; z < n;z++)
     {
       if(rand()/(1.0*RAND_MAX) < prob){myList -> deleteNxtPointAndMove();}
       else{myList -> move();}
@@ -228,11 +229,10 @@ void Omega::list_doublylinked2(unsigned int nbLoops, unsigned int batch, double 
 //####### SinglyLinkedList4 #######////####### SinglyLinkedList4 #######////####### SinglyLinkedList4 #######//
 
 
-void Omega::list_SinglyLinkedList4(unsigned int nbLoops, unsigned int batch, double prob)
+void Omega::list_SinglyLinkedList4(unsigned int nbLoops, unsigned int batch, double prob, int default_length)
 {
   unsigned int n;
-  SinglyLinkedList4 myList = SinglyLinkedList4(nbLoops*batch);
-
+  SinglyLinkedList4 myList = SinglyLinkedList4(default_length);
   for(unsigned int i = 0; i < nbLoops; i++)
   {
     ///ADD bach elements
@@ -244,7 +244,35 @@ void Omega::list_SinglyLinkedList4(unsigned int nbLoops, unsigned int batch, dou
     ///DELETE a proportion prob of elements
     myList.initializeCurrentPosition();
     n = myList.getLength();
-    for(unsigned int i = 0; i < n;i++)
+    for(unsigned int z = 0; z < n;z++)
+    {
+      if(rand()/(1.0*RAND_MAX) < prob){myList.deleteNxtPointAndMove();}
+      else{myList.move();}
+    }
+  }
+  length = myList.getLength();
+}
+
+//####### SinglyLinkedList5 #######////####### SinglyLinkedList5 #######////####### SinglyLinkedList5 #######//
+//####### SinglyLinkedList5 #######////####### SinglyLinkedList5 #######////####### SinglyLinkedList5 #######//
+
+
+void Omega::list_SinglyLinkedList5(unsigned int nbLoops, unsigned int batch, double prob)
+{
+  unsigned int n;
+  SinglyLinkedList5 myList = SinglyLinkedList5();
+  for(unsigned int i = 0; i < nbLoops; i++)
+  {
+    ///ADD bach elements
+    for(unsigned int j = 0; j < batch; j++)
+    {
+      myList.addPoint(rand(),rand());
+    }
+
+    ///DELETE a proportion prob of elements
+    myList.initializeCurrentPosition();
+    n = myList.getLength();
+    for(unsigned int z = 0; z < n;z++)
     {
       if(rand()/(1.0*RAND_MAX) < prob){myList.deleteNxtPointAndMove();}
       else{myList.move();}
