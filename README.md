@@ -197,7 +197,7 @@ Same as *vr2*. In addition to that, we keep a pointer on the element minus one p
 
 4) *al3*
 
-In this implementation default elements are instantiated by blocks (contigously in the memory) and linked to each other. The number of elements in one block is defined by the user. We keep a pointer on the last element of the list so that when an element is deleted it is actually linked at the end of the list. When the list contain more elements than can contain one block, we instanciate another block of default elements. Then the last element of the list is linked to the first element of the new block. In the same way as *al1* and *al2*, we loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
+In this implementation default elements are instantiated by blocks (contigously in the memory) and linked to each other. The number of elements in one block is defined by the user. We keep a pointer on the last element of the list so that when an element is deleted it is actually linked at the end of the list. When the list contain more elements than can contain one block, we instantiate another block of default elements. Then the last element of the list is linked to the first element of the new block. In the same way as *al1* and *al2*, we loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
 
 5) *al4*
 
