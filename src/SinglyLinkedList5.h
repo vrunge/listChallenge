@@ -12,7 +12,6 @@ class SinglyLinkedList5
     Point * lastActivePosition;
     Point * tail;
     unsigned int lengthList;
-    std::vector<Point *> headVec;
 
     public:
     SinglyLinkedList5();
