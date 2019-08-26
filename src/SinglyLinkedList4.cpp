@@ -50,9 +50,9 @@ unsigned int SinglyLinkedList4::getLength()
 
 SinglyLinkedList4::~SinglyLinkedList4()
 {
-    for (Point * h:headVec)
+    for (int i{0}; i<headVec.size(); i++)
     {
-        free(h);
+        free(headVec[i]);
     }
 }
 
