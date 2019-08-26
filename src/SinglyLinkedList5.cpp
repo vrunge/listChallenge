@@ -16,11 +16,12 @@ SinglyLinkedList5::SinglyLinkedList5()
 
 void SinglyLinkedList5::addPoint(unsigned int s, unsigned int t)
 {
-    if (lastActivePosition -> nxt == NULL)
+    if (lastActivePosition == tail)
     {
         tail = new Point(s,t);
+        tail->nxt = NULL;
         lastActivePosition -> nxt = tail;
-        lastActivePosition = lastActivePosition->nxt;
+        lastActivePosition = tail;
     }
     else
     {
@@ -59,7 +60,7 @@ void SinglyLinkedList5::initializeCurrentPosition()
 void SinglyLinkedList5::deleteNxtPointAndMove(){
     tail -> nxt = currentPosition -> nxt;
     currentPosition -> nxt = currentPosition->nxt->nxt;
-    tail->nxt->nxt = NULL;
     tail = tail->nxt;
+    tail->nxt = NULL;
     lengthList--;
 }
