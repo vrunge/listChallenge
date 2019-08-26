@@ -12,8 +12,8 @@ class PointDoubly
     PointDoubly(unsigned int s, unsigned int t);
     unsigned int state;
     unsigned int time;
-    PointDoubly* nxt;
     PointDoubly* prev;
+    PointDoubly* nxt;
 };
 
 #endif // POINT_H
