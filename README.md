@@ -36,11 +36,11 @@ Dynamic programming for changepoint detection is based on the search for the min
 
 This challenge consists in coding the **fastest possible** list structure in C++. Precisely, our main function has 3 parameters :
 
--- ***length*** : the number of elements to add in the list
+- ***length*** : the number of elements to add in the list
 
--- ***batch*** : the number of elements to add at each loop
+- ***batch*** : the number of elements to add at each loop
 
--- ***prob*** : the probability to delete an element
+- ***prob*** : the probability to delete an element
 
  
 The number of loops is determined by the greatest integers `p` such that `batch x p <= length`.
