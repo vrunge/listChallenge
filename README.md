@@ -14,8 +14,6 @@
 
 * Arnaud Liehrmann (M1 student Evry University). method : al1, al2, al3, al4
 
-* ...
-
 
 > [The challenge](#challenge)
 
@@ -43,12 +41,11 @@ This challenge consists in coding the **fastest possible** list structure in C++
 - ***prob*** : the probability to delete an element
 
  
-The number of loops is determined by the greatest integers `p` such that `batch x p <= length`.
-At the end of each loop (after adding `batch` elements), the algorithm scans all the elements of the list and for each element chooses to delete it with a probability `prob`.
+The number of loops is determined by the greatest integers `p` such that `batch x p <= length`. At the end of each loop (after adding `batch` elements), the algorithm scans all the elements of the list and for each element decides to delete it (or not) with a probability `prob`.
 
 In our implementation, the elements are called `Point` (instance of the `Point` class). Each Point is made of two unsigned integers whose values are chosen randomly with the C++ rand() operator.
 
-The method to use is defined in the `method` parameter of the main function `listChallenge`. Notice that this function returns two parameters, the system time and `nb` which contains the number of elements in the list after the batch loop (but before the pruning loop with probability `prob`) 
+The method to use is defined in the `method` parameter of the main function `listChallenge`. Notice that this function returns two parameters, the system time and `nb` which contains the number of elements in the list at the end of the dynamic programming algorithm.
 
 <a id="list"></a>
 
@@ -164,9 +161,11 @@ listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al3", default_l
 ## $time
 ## [1] 2.4966
 ```
+
 ```r
 listChallenge(length = 10^7, batch = 10^4, prob = 0.1, method = "al4")
 ```
+
 ```
 ##$finalLength
 ##[1] 90333
@@ -185,7 +184,7 @@ Notice that the number of elements after the last loop is in the `finalLength` p
 
 1) *vr1*
 
-In this implementation the elements are added after the head of the list. The head is a dummy element. We loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
+In this implementation elements are added at the beginning (the head) of the list. The head is a dummy element. We loop through and delete elements of the list with the pointer `currentPosition` on which we can act with the methods `initializeCurrentPoisition`, `deleteNxtPoint` and `move`.
 
 2) *vr2*
 
